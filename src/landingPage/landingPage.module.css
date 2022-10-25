@@ -10,3 +10,7 @@ body {
     justify-content: center;
     flex-direction: column;
 }
+
+.form-wrapper {
+    border: 1px solid black;
+}

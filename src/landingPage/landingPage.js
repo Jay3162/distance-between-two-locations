@@ -1,6 +1,7 @@
 import {useState, useEffect} from 'react'
 import Calculator from '../calculator/calculator';
 import style from './landingPage.module.css'
+import LocationFinder from '../location-call/locationApi';
 
 export default function LandingPage () {
     const [startCoordLng, setStartCoordLng] = useState();
@@ -10,7 +11,7 @@ export default function LandingPage () {
     const [result, setResult] = useState();
 
 
-
+    console.log(LocationFinder());
     const handleSubmit = (e) => {
         e.preventDefault();
         return startCoordLng, startCoordLat, endCoordLng, endCoordLat
@@ -48,6 +49,7 @@ export default function LandingPage () {
                 placeholder="lat"
                 onChange={(e) => setEndCoordLat(e.target.value)}
                 />
+                <p>Calculate</p>
                 <input type="submit"/>
             </form>
             {result ? <div>{result}</div> : <div></div>}
